@@ -2,7 +2,7 @@ const sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
 const range = 'C7:C9';
 
 // The corrected Google Sheets API URL
-const url = `https://spreadsheets.google.com/feeds/cells/${sheetID}/1/public/values?alt=json-in-script&range=${range}`;
+const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?`;
 
 
 // Function to fetch data from Google Sheet and display as links
