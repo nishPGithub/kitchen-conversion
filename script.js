@@ -10,12 +10,10 @@ async function fetchData() {
     try {
         const response = await fetch(url);
         const data = await response.text();
-        const json = JSON.parse(data.replace('gdata.io.handleScriptLoaded(', '').slice(0, -2));
-        const entries = json.feed.entry;
+        const values = data.split('\n').filter(Boolean);
         const measurementData = document.getElementById('measurementData');
 
-        entries.forEach(entry => {
-            const value = entry.content.$t;
+        values.forEach(value => {
             const link = document.createElement('a');
             link.href = value;
             link.textContent = value;
@@ -23,7 +21,7 @@ async function fetchData() {
             measurementData.appendChild(link);
             measurementData.appendChild(document.createElement('br'));
         });
-        } catch (error){
+    } catch (error) {
         console.error(error);
     }
 }
