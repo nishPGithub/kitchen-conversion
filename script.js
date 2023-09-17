@@ -3,7 +3,8 @@ const sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
 const range = 'C7:C9';
 
 // The Google Sheets API URL
-const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&tq=SELECT%20${range}`;
+const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=${range}`;
+
 
 // Function to fetch data from Google Sheet and display as links
 async function fetchData() {
