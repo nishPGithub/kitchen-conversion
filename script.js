@@ -1,38 +1,5 @@
-const sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
-const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=B7:C`
-
-async function fetchData() {
-    try {
-        const response = await fetch(url);
-        const data = await response.text();
-        const rows = data.split('\n').filter(Boolean);
-        const titleMap = {};
-
-        rows.forEach(row => {
-            const columns = row.split(',');
-            const id = columns[0].trim()
-            const title = columns[1].trim()
-
-            titleMap[id] = title;
-        });
-        console.log(titleMap);
-        const measurementData = document.getElementById('measurementData');
-
-        Object.keys(titleMap).forEach(id => {
-            const link = document.createElement('a');
-            link.href = "recipe.html"
-            link.textContent = titleMap[id];
-            link.target = "_self";
-            measurementData.appendChild(link);
-            measurementData.appendChild(document.createElement('br'));
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
-window.addEventListener('load', fetchData);
-
 const navParent = document.querySelector(".headerLinks")
+
 class RecipeLinks {
     constructor(parent){
         this.parent = parent;
@@ -62,7 +29,6 @@ class RecipeLinks {
         }
     }
     
-
     splitData(rows){
         const titleMap = {};
         
@@ -77,16 +43,18 @@ class RecipeLinks {
         this.createLinks(titleMap)
     }
 
-    createLinks(titleMap){
+    createLinks(titleMap) {
         Object.keys(titleMap).forEach(id => {
-            const link = document.createElement('a');
-            link.href = "recipe.html"
-            link.textContent = titleMap[id];
-            link.target = "_self";
-            measurementData.appendChild(link);
-            measurementData.appendChild(document.createElement('br'));
+          const link = document.createElement('a');
+          const cleanedTitle = titleMap[id].replace(/"/g, '');
+      
+          link.href = "recipe.html";
+          link.textContent = cleanedTitle;
+          link.target = "_self";
+          measurementData.appendChild(link);
+          measurementData.appendChild(document.createElement('br'));
         });
-    }
+      }
 }
 
 new RecipeLinks(navParent);
