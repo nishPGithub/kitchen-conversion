@@ -43,15 +43,25 @@ class RecipeLinks {
 
     fetchData() {
         try {
-            const response = fetch(this.url);
-            const data = response.text();
-            const rows = data.split('\n').filter(Boolean);
-            this.splitData(rows);
-        }
-        catch (error) {
+            fetch(this.url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const rows = data.split('\n').filter(Boolean);
+                    this.splitData(rows);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        } catch (error) {
             console.error(error);
         }
     }
+    
 
     splitData(rows){
         const titleMap = {};
