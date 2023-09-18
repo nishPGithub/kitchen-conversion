@@ -74,6 +74,18 @@ class RecipeLinks {
         })
 
         console.log(titleMap);
+        this.createLinks(titleMap)
+    }
+
+    createLinks(titleMap){
+        Object.keys(titleMap).forEach(id => {
+            const link = document.createElement('a');
+            link.href = "recipe.html"
+            link.textContent = titleMap[id];
+            link.target = "_self";
+            measurementData.appendChild(link);
+            measurementData.appendChild(document.createElement('br'));
+        });
     }
 }
 
