@@ -44,11 +44,26 @@ class RecipeLinks {
     fetchData() {
         try {
             const response = fetch(this.url);
-            console.log(response);
+            const data = response.text();
+            const rows = data.split('\n').filter(Boolean);
+            this.splitData(rows);
         }
         catch (error) {
             console.error(error);
         }
+    }
+
+    splitData(rows){
+        const titleMap = {};
+        
+        rows.forEach(row => {
+            const columns = row.split(',');
+            const id = columns[0].trim()
+            const title = columns[1].trim()
+            titleMap[id] = title;
+        })
+
+        console.log(titleMap);
     }
 }
 
