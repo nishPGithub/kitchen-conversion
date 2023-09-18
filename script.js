@@ -1,23 +1,26 @@
-// Replace 'YourSheetID' with the actual Google Sheet ID
 const sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
-const range = 'C7:C9';
-
-// The Google Sheets API URL
-const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=${range}`;
-
-
-// Function to fetch data from Google Sheet and display as links
+const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=B7:C`
 async function fetchData() {
     try {
         const response = await fetch(url);
         const data = await response.text();
-        const values = data.split('\n').filter(Boolean);
+        const rows = data.split('\n').filter(Boolean);
+        const titleMap = {};
+
+        rows.forEach(row => {
+            const columns = row.split(',');
+            const id = columns[0].trim()
+            const title = columns[1].trim()
+
+            titleMap[id] = title;
+        });
+        console.log(titleMap);
         const measurementData = document.getElementById('measurementData');
 
-        values.forEach(value => {
+        Object.keys(titleMap).forEach(id => {
             const link = document.createElement('a');
-            link.href = "recipe.html";
-            link.textContent = value;
+            link.href = "recipe.html"
+            link.textContent = titleMap[id];
             link.target = "_self";
             measurementData.appendChild(link);
             measurementData.appendChild(document.createElement('br'));
@@ -26,6 +29,4 @@ async function fetchData() {
         console.error(error);
     }
 }
-
-// Call the fetchData function when the page loads
 window.addEventListener('load', fetchData);
