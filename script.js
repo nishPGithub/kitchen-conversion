@@ -18,7 +18,7 @@ async function fetchData() {
             const link = document.createElement('a');
             link.href = "recipe.html";
             link.textContent = value;
-            link.target = "_blank";
+            link.target = "_self";
             measurementData.appendChild(link);
             measurementData.appendChild(document.createElement('br'));
         });
