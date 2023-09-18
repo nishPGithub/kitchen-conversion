@@ -4,7 +4,7 @@ class RecipeLinks {
     constructor(parent){
         this.parent = parent;
         this.sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
-        this.url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=B7:C`;
+        this.url = `https://docs.google.com/spreadsheets/d/${this.sheetID}/gviz/tq?tqx=out:csv&range=B7:C`;
         this.fetchData();
     }
 
