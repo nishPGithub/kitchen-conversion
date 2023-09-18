@@ -1,5 +1,6 @@
 const sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
 const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=B7:C`
+
 async function fetchData() {
     try {
         const response = await fetch(url);
@@ -30,3 +31,25 @@ async function fetchData() {
     }
 }
 window.addEventListener('load', fetchData);
+
+const navParent = document.querySelector(".headerLinks")
+class RecipeLinks {
+    constructor(parent){
+        this.parent = parent;
+        this.sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
+        this.url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:csv&range=B7:C`;
+        this.fetchData();
+    }
+
+    fetchData() {
+        try {
+            const response = fetch(this.url);
+            console.log(response);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+new RecipeLinks(navParent);
