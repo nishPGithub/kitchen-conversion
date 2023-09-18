@@ -16,7 +16,7 @@ async function fetchData() {
 
         values.forEach(value => {
             const link = document.createElement('a');
-            link.href = value;
+            link.href = "recipe.html";
             link.textContent = value;
             link.target = "_blank";
             measurementData.appendChild(link);
