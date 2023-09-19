@@ -51,6 +51,7 @@ class RecipeLinks {
             link.target = "_self";
             measurementData.appendChild(link);
             measurementData.appendChild(document.createElement('br'));
+            console.log(link.dataID);
         });
       }
 }
