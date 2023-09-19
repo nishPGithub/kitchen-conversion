@@ -47,18 +47,11 @@ class RecipeLinks {
             const link = document.createElement('a');
             const cleanedTitle = titleMap[id].replace(/"/g, '');
             link.dataID = titleMap[id];
-            link.href = "recipe.html";
+            link.href = `recipe.html?recipe=${encodeURIComponent(cleanedTitle)}`;
             link.textContent = cleanedTitle;
             link.target = "_self";
-            measurementData.appendChild(link);
-
-            link.addEventListener("click", () => this.handleLinkClick(link))
+            measurementData.appendChild(link)
         });
-    }
-
-    handleLinkClick(link) {
-        const dataID = link.getAttribute('dataID');
-        this.pageTitle.textContent = titleMap[dataID]
     }
 }
 
