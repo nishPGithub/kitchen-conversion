@@ -47,7 +47,7 @@ class RecipeLinks {
             const link = document.createElement('a');
             const cleanedTitle = titleMap[id].replace(/"/g, '');
             link.dataID = titleMap[id];
-            link.href = `recipe.html?recipe=${encodeURIComponent(cleanedTitle)}`;
+            link.href = `recipe.html?recipe=${encodeURIComponent(cleanedTitle)}?ID=${encodeURIComponent(titleMap[id])}`;
             link.textContent = cleanedTitle;
             link.target = "_self";
             measurementData.appendChild(link)
