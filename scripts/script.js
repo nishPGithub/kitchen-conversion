@@ -5,6 +5,7 @@ class RecipeLinks {
         this.parent = parent;
         this.sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
         this.url = `https://docs.google.com/spreadsheets/d/${this.sheetID}/gviz/tq?tqx=out:csv&range=B7:C`;
+        this.pageTitle = this.parent.querySelector(".pageTitle")
         this.fetchData();
     }
 
@@ -51,9 +52,15 @@ class RecipeLinks {
             link.target = "_self";
             measurementData.appendChild(link);
             measurementData.appendChild(document.createElement('br'));
-            console.log(link.dataID);
+
+            link.addEventListener("click", () => this.handleLinkClick(link))
         });
-      }
+    }
+
+    handleLinkClick(link) {
+        const dataID = link.getAttribute('dataID');
+        this.pageTitle.textContent = titleMap[dataID]
+    }
 }
 
 new RecipeLinks(navParent);
