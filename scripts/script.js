@@ -1,5 +1,43 @@
 const navParent = document.querySelector(".headerLinks")
 
+/*const { google } = require('googleapis');
+const sheets = google.sheets('v4');
+
+// Load client secrets from your credentials.json file
+const credentials = require('./credentials.json');
+
+const { client_secret, client_id, redirect_uris } = credentials.web;
+
+const oAuth2Client = new google.auth.OAuth2(
+  client_id, client_secret, redirect_uris[0]
+);
+
+async function readKhichidiIngredients() {
+    try {
+      const spreadsheetId = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
+      const range = 'Khichidi Ingredients!A1:Z';
+  
+      const response = await sheets.spreadsheets.values.get({
+        auth: oAuth2Client,
+        spreadsheetId,
+        range,
+      });
+  
+      const values = response.data.values;
+  
+      if (values.length) {
+        // Process and use the data as needed
+        console.log(values);
+      } else {
+        console.log('No data found.');
+      }
+    } catch (error) {
+      console.error('Error reading data:', error);
+    }
+  }
+
+  readKhichidiIngredients();*/
+
 class RecipeLinks {
     constructor(parent){
         this.parent = parent;
