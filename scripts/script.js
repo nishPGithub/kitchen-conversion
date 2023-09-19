@@ -5,7 +5,7 @@ class RecipeLinks {
         this.parent = parent;
         this.sheetID = '1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA';
         this.url = `https://docs.google.com/spreadsheets/d/${this.sheetID}/gviz/tq?tqx=out:csv&range=B7:C`;
-        this.pageTitle = this.parent.querySelector(".pageTitle")
+        this.pageTitle = document.querySelector(".pageTitle")
         this.fetchData();
     }
 
@@ -51,7 +51,6 @@ class RecipeLinks {
             link.textContent = cleanedTitle;
             link.target = "_self";
             measurementData.appendChild(link);
-            measurementData.appendChild(document.createElement('br'));
 
             link.addEventListener("click", () => this.handleLinkClick(link))
         });
