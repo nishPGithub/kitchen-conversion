@@ -38,21 +38,19 @@ class RecipeLinks {
             const title = columns[1].trim()
             titleMap[id] = title;
         })
-
-        console.log(titleMap);
         this.createLinks(titleMap)
     }
 
     createLinks(titleMap) {
         Object.keys(titleMap).forEach(id => {
-          const link = document.createElement('a');
-          const cleanedTitle = titleMap[id].replace(/"/g, '');
-      
-          link.href = "recipe.html";
-          link.textContent = cleanedTitle;
-          link.target = "_self";
-          measurementData.appendChild(link);
-          measurementData.appendChild(document.createElement('br'));
+            const link = document.createElement('a');
+            const cleanedTitle = titleMap[id].replace(/"/g, '');
+            link.dataID = titleMap[id];
+            link.href = "recipe.html";
+            link.textContent = cleanedTitle;
+            link.target = "_self";
+            measurementData.appendChild(link);
+            measurementData.appendChild(document.createElement('br'));
         });
       }
 }
