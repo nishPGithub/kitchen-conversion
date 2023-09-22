@@ -22,6 +22,9 @@ async function initializeGapiClient() {
 function maybeEnableButtons() {
     if (homeGapiInited) {
         listRecipies();
+        listIngredients(sheetTitle);
+        listAmount(sheetTitle)
+        editLinkHref();
     }
 }
 
