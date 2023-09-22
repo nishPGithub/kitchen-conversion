@@ -3,7 +3,7 @@ async function listAmount(sheetTitle) {
     try {
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
-            range: `${sheetTitle}!C3:D`,
+            range: `${sheetTitle}!B2:C`,
         });
     } catch (err) {
         console.error(err.message);

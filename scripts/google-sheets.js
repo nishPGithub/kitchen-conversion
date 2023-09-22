@@ -30,26 +30,27 @@ function maybeEnableButtons() {
 async function listRecipies() {
     let response;
     try {
-        response = await gapi.client.sheets.spreadsheets.values.get({
+        response = await gapi.client.sheets.spreadsheets.get({
             spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
-            range: "Recipie List!C7:C",
         });
+        console.log(response);
     } catch (err) {
         console.error(err.message);
         return;
     }
 
-    const range = response.result;
-    if (!range || !range.values || range.values.length == 0) {
-        console.log("No values found.");
-        return;
-    }
+    const range = response.result.sheets;
+    // if (!range || !range.values || range.values.length == 0) {
+    //     console.log("No values found.");
+    //     return;
+    // }
 
     const linkWrapper = document.querySelector(".linkWrapper");
-    range.values.forEach((row) => {
+    range.forEach((row) => {
+        console.log(row.properties.title)
         const link = document.createElement("a");
-        link.href = `src/recipe.html?recipe=${encodeURIComponent(row[0])}`;
-        link.innerText = row[0];
+        link.href = `src/recipe.html?recipe=${encodeURIComponent(row.properties.title)}`;
+        link.innerText = row.properties.title;
         link.className = "recipeLink navLink"
         linkWrapper.appendChild(link);
     });

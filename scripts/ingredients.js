@@ -6,7 +6,7 @@ async function listIngredients(sheetTitle) {
     try {
       response = await gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
-        range: `${sheetTitle}!B3:B`,
+        range: `${sheetTitle}!A2:A`,
       });
     } catch (err) {
       console.error(err.message);
