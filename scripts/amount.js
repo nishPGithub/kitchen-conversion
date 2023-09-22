@@ -10,14 +10,14 @@ async function listAmount(sheetTitle) {
         return;
     }
 
-    const range = response.result;
-    if (!range || !range.values || range.values.length == 0) {
+    const amountRange = response.result;
+    if (!amountRange || !amountRange.values || amountRange.values.length == 0) {
         console.log("No values found.");
         return;
     }
 
     const amountList = document.querySelector(".amountList");
-    range.values.forEach((row) => {
+    amountRange.values.forEach((row) => {
         const li = document.createElement("li");
         li.textContent = row[0];
         if (row[1] !== undefined) {

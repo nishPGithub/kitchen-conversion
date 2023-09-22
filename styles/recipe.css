@@ -24,3 +24,36 @@
     padding: 5px 0;
     font-size: 1.4rem;
 }
+
+.numberFormWrapper {
+    padding-top: 25px;
+}
+
+.numbersForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.primaryFormInput {
+    font-size: 1.6rem;
+    width: 150%;
+    padding: 10px;
+    border: 2px solid var(--BLACK);
+    border-radius: 5px;
+}
+
+.primaryFormSubmit {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    padding: 5px;
+    width: 75%;
+    border: 2px solid var(--BLACK);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.primaryFormSubmit:hover {
+    box-shadow: 0 0 5px 3px var(--GREY);
+}
