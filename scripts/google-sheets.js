@@ -46,9 +46,9 @@ async function listRecipies() {
     const linkWrapper = document.querySelector(".linkWrapper");
     range.values.forEach((row) => {
         const link = document.createElement("a");
-        link.href = `recipe.html?recipe=${encodeURIComponent(row[0])}`;
+        link.href = `src/recipe.html?recipe=${encodeURIComponent(row[0])}`;
         link.innerText = row[0];
-        link.className = "recipeLink"
+        link.className = "recipeLink navLink"
         linkWrapper.appendChild(link);
     });
 }
