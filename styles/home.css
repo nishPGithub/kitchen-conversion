@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    min-height: 100%;
+}
+
+.mainBodyWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linkWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--SAFFRON);
+    min-height: 100%;
+    font-size: 2.2rem;
+}
+
+.recipeLink {
+    padding: 10px;
+}
+
+.recipeLink:last-child {
+    padding: 0 10px 0 10px;
+}
+
+.recipeLink:hover {
+    box-shadow: 0 0 5px 5px var(--GREY);
+}
+
+.pageTitle {
+    font-size: 3rem;
+    padding: 10px 0;
+}
+
+.pagePara {
+    font-size: 1.6rem;
+}

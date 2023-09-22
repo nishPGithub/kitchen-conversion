@@ -1,0 +1,4 @@
+function apiLoad() {
+    gapiLoaded();
+    ingredientsGapiLoaded();
+};

@@ -4,7 +4,7 @@ const DISCOVERY_DOC = "https://sheets.googleapis.com/$discovery/rest?version=v4"
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
 const pageParent = document.querySelector("body");
 
-let gapiInited = false;
+let homeGapiInited = false;
 
 function gapiLoaded() {
     gapi.load("client", initializeGapiClient);
@@ -15,12 +15,12 @@ async function initializeGapiClient() {
         apiKey: API_KEY,
         discoveryDocs: [DISCOVERY_DOC],
     });
-    gapiInited = true;
+    homeGapiInited = true;
     maybeEnableButtons();
 }
 
 function maybeEnableButtons() {
-    if (gapiInited) {
+    if (homeGapiInited) {
         listRecipies();
     }
 }
@@ -30,7 +30,7 @@ async function listRecipies() {
     try {
         response = await gapi.client.sheets.spreadsheets.values.get({
             spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
-            range: "Recipie List!C7:E17",
+            range: "Recipie List!C7:C",
         });
     } catch (err) {
         console.error(err.message);
@@ -46,8 +46,9 @@ async function listRecipies() {
     const linkWrapper = document.querySelector(".linkWrapper");
     range.values.forEach((row) => {
         const link = document.createElement("a");
-        link.href = "recipe.html";
+        link.href = `recipe.html?recipe=${encodeURIComponent(row[0])}`;
         link.innerText = row[0];
+        link.className = "recipeLink"
         linkWrapper.appendChild(link);
     });
 }

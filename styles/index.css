@@ -1,0 +1,18 @@
+@import url(./home.css);
+@import url(./recipe.css);
+:root {
+    --GREY: #808080;
+    --SAFFRON: #F4C430;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    max-width: 1400px;
+    box-shadow: 0 0 15px 15px var(--GREY);
+    margin: auto;
+    min-height: 1400px;
+    display: flex;
+}
