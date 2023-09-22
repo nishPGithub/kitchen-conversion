@@ -21,7 +21,7 @@ async function listAmount(sheetTitle) {
         const li = document.createElement("li");
         li.textContent = row[0];
         if (row[1] !== undefined) {
-            li.textContent += row[1];
+            li.textContent += " " + row[1];
         }
         li.className = "amountListItem";
         amountList.appendChild(li);
