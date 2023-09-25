@@ -8,12 +8,13 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     max-width: 1400px;
     box-shadow: 0 0 15px 15px var(--GREY);
     margin: auto;
-    min-height: 1400px;
+    height: 100%;
     display: flex;
 }
