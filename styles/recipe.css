@@ -1,73 +1,155 @@
-.innerBodyWrapper {
-    display: flex;
+@media (max-width:1024px) {
+    .innerBodyWrapper {
+        display: flex;
+    }
+
+    .recipeWrapper {
+        display: flex;
+    }
+
+    .ingredientsWrapper {
+        padding: 0 15px 0 0 ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subtitle {
+        font-size: 4rem;
+        padding-bottom: 20px;
+    }
+
+    .ingredientsList, .amountList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ingredientsListItem, .amountListItem {
+        padding: 5px 0;
+        font-size: 4rem;
+    }
+
+    .spanText {
+        padding-top: 20px;
+        font-size: 4rem;
+    }
+
+    .people {
+        font-weight: 700;
+    }
+
+    .numberFormWrapper {
+        padding-top: 25px;
+        width: 100%;
+    }
+
+    .numbersForm {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .primaryFormInput {
+        font-size: 3rem;
+        width: 75%;
+        padding: 10px;
+        border: 2px solid var(--BLACK);
+        border-radius: 5px;
+    }
+
+    .primaryFormSubmit {
+        font-size: 4rem;
+        margin-top: 25px;
+        padding: 5px;
+        width: 22%;
+        border: 2px solid var(--BLACK);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .primaryFormSubmit:hover {
+        box-shadow: 0 0 5px 3px var(--GREY);
+    }
+
+    ::placeholder {
+        text-align: center;
+    }
 }
 
-.recipeWrapper {
-    display: flex;
-}
+@media (min-width:1025px) {
+    .innerBodyWrapper {
+        display: flex;
+    }
 
-.ingredientsWrapper {
-    padding: 0 15px 0 0 ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .recipeWrapper {
+        display: flex;
+    }
 
-.subtitle {
-    font-size: 2rem;
-    padding-bottom: 15px;
-}
+    .ingredientsWrapper {
+        padding: 0 15px 0 0 ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.ingredientsList, .amountList{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .subtitle {
+        font-size: 2rem;
+        padding-bottom: 15px;
+    }
 
-.ingredientsListItem, .amountListItem {
-    padding: 5px 0;
-    font-size: 1.4rem;
-}
+    .ingredientsList, .amountList{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.spanText {
-    padding-top: 20px;
-    font-size: 1.6rem;
-}
+    .ingredientsListItem, .amountListItem {
+        padding: 5px 0;
+        font-size: 1.4rem;
+    }
 
-.people {
-    font-weight: 700;
-}
+    .spanText {
+        padding-top: 20px;
+        font-size: 1.6rem;
+    }
 
-.numberFormWrapper {
-    padding-top: 25px;
-    width: 100%;
-}
+    .people {
+        font-weight: 700;
+    }
 
-.numbersForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
+    .numberFormWrapper {
+        padding-top: 25px;
+        width: 100%;
+    }
 
-.primaryFormInput {
-    font-size: 1.6rem;
-    width: 22%;
-    padding: 10px;
-    border: 2px solid var(--BLACK);
-    border-radius: 5px;
-}
+    .numbersForm {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
 
-.primaryFormSubmit {
-    font-size: 1.4rem;
-    margin-top: 25px;
-    padding: 5px;
-    width: 22%;
-    border: 2px solid var(--BLACK);
-    border-radius: 5px;
-    text-align: center;
-}
+    .primaryFormInput {
+        font-size: 1.6rem;
+        width: 22%;
+        padding: 10px;
+        border: 2px solid var(--BLACK);
+        border-radius: 5px;
+    }
 
-.primaryFormSubmit:hover {
-    box-shadow: 0 0 5px 3px var(--GREY);
+    .primaryFormSubmit {
+        font-size: 1.4rem;
+        margin-top: 25px;
+        padding: 5px;
+        width: 22%;
+        border: 2px solid var(--BLACK);
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .primaryFormSubmit:hover {
+        box-shadow: 0 0 5px 3px var(--GREY);
+    }
 }
