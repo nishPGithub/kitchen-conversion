@@ -40,15 +40,14 @@
             </div>
             <div class="numberFormWrapper">
                 <form class="numbersForm">
-                  <input class="primaryFormInput" type="text" placeholder="How many people are we cooking for?" name="numberOfPeople">
-                  <button class="primaryFormSubmit" type="submit">Submit</button>
+                    <input class="primaryFormInput" type="text" placeholder="How many people are we cooking for?" name="numberOfPeople" pattern="[0-9]+" required>
+                    <button class="primaryFormSubmit" type="submit">Submit</button>
                 </form>
               </div>
         </div>
         <script src="../scripts/script.js"></script>
         <script async defer src="https://apis.google.com/js/api.js" onload="apiLoad()"></script>
         <script src="../scripts/amount.js"></script>
-        <script src="../scripts/changeHref.js"></script>
         <script src="../scripts/google-sheets.js"></script>
         <script src="../scripts/title.js"></script>
         <script src="../scripts/ingredients.js"></script>
