@@ -15,7 +15,7 @@ function maybeEnableButtons() {
     if (homeGapiInited) {
         listRecipies();
         listIngredients(sheetTitle);
-        listAmount(sheetTitle)
+        listAmount(sheetTitle);
         editLinkHref();
     }
 }
@@ -36,11 +36,15 @@ async function listRecipies() {
 
     const linkWrapper = document.querySelector(".linkWrapper");
     range.forEach((row) => {
-        console.log(row.properties.title)
+        console.log(row.properties.title);
         const link = document.createElement("a");
-        link.href = `src/recipe.html?recipe=${encodeURIComponent(row.properties.title)}`;
+        if (location.href.includes("recipe")) {
+            link.href = `recipe.html?recipe=${encodeURIComponent(row.properties.title)}`;
+        } else {
+            link.href = `src/recipe.html?recipe=${encodeURIComponent(row.properties.title)}`;
+        }
         link.innerText = row.properties.title;
-        link.className = "recipeLink navLink"
+        link.className = "recipeLink navLink";
         linkWrapper.appendChild(link);
     });
 }
