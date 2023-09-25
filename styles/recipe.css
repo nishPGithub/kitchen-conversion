@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.recipeWrapper {
+    display: flex;
+}
+
 .ingredientsWrapper {
     padding: 0 15px 0 0 ;
     display: flex;
@@ -25,8 +29,18 @@
     font-size: 1.4rem;
 }
 
+.spanText {
+    padding-top: 20px;
+    font-size: 1.6rem;
+}
+
+.people {
+    font-weight: 700;
+}
+
 .numberFormWrapper {
     padding-top: 25px;
+    width: 100%;
 }
 
 .numbersForm {
@@ -38,7 +52,7 @@
 
 .primaryFormInput {
     font-size: 1.6rem;
-    width: 150%;
+    width: 22%;
     padding: 10px;
     border: 2px solid var(--BLACK);
     border-radius: 5px;
@@ -48,7 +62,7 @@
     font-size: 1.4rem;
     margin-top: 25px;
     padding: 5px;
-    width: 75%;
+    width: 22%;
     border: 2px solid var(--BLACK);
     border-radius: 5px;
     text-align: center;

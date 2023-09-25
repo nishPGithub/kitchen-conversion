@@ -1,5 +1,6 @@
 const form = document.querySelector(".numbersForm");
 const inputField = form.elements.numberOfPeople;
+const spanText =pageParent.querySelector(".people");
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -7,6 +8,7 @@ form.addEventListener("submit", function (event) {
     const multiplier = numberOfPeople / 100;
     changeAmount(sheetTitle, multiplier);
     inputField.value = "";
+    spanText.innerHTML = numberOfPeople;
 });
 
 async function changeAmount(sheetTitle, multiplier) {
