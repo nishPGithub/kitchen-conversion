@@ -16,7 +16,7 @@ async function changeAmount(sheetTitle, multiplier) {
 
     try {
         response = await gapi.client.sheets.spreadsheets.values.get({
-            spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
+            spreadsheetId: "1SRMRrV8817I1jQlDqpR0M0qYQMqwo16VxyJ6Z18XmNQ",
             range: `${sheetTitle}!B2:C`,
         });
     } catch (err) {

@@ -24,7 +24,7 @@ async function listRecipies() {
     let response;
     try {
         response = await gapi.client.sheets.spreadsheets.get({
-            spreadsheetId: "1aSFaoYzNI1JZBFTXS6ENvD-isTszCSKMs9axjgsTnZA",
+            spreadsheetId: "1SRMRrV8817I1jQlDqpR0M0qYQMqwo16VxyJ6Z18XmNQ",
         });
         console.log(response);
     } catch (err) {
