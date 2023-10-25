@@ -9,8 +9,9 @@
         flex-direction: column;
         background-color: var(--SAFFRON);
         max-height: 100%;
-        font-size: 3.3rem;
+        font-size: 5.5rem;
         overflow-y: scroll;
+        max-width: 300px;
     }
 
     .navLink {
